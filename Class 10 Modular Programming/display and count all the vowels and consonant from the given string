@@ -1,0 +1,19 @@
+DECLARE SUB COUNT (N$)
+CLS
+INPUT "Enter any string"; N$
+CALL COUNT(N$)
+END
+SUB COUNT (N$)
+    FOR I = 1 TO LEN(N$)
+        X$ = MID$(N$, I, 1)
+        X$ = UCASE$(X$)
+        IF X$ = "A" OR X$ = "E" OR X$ = "I" OR X$ = "O" OR X$ = "U" THEN
+            V = V + 1
+        ELSE
+            C = C + 1
+        END IF
+    NEXT I
+    PRINT "Total numbers of vowels ="; V
+    PRINT "Total numbers of consonants ="; C
+END SUB
+
